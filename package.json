@@ -1,0 +1,27 @@
+{
+  "name": "gfe-art-template",
+  "description": "JavaScript Template Engine",
+  "homepage": "https://github.com/midday/gfe-art-template",
+  "keywords": [
+    "util",
+    "functional",
+    "template",
+    "macro"
+  ],
+  "author": "midday <598535774@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/midday/gfe-art-template.git"
+  },
+  "main": "./node/template.js",
+  "version": "1.0.0",
+  "devDependencies": {
+    "express": "~4.4.3",
+    "grunt-cli": "*",
+    "grunt": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*"
+  },
+  "license": "MIT"
+}

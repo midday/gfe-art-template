@@ -1,0 +1,20 @@
+<div id="main">
+    <h3>macro支持类型：number/string/boolean/array/object/reference-data</h3>
+    <!-- 宏定义 -->
+    {{macro:testMacro num str boo arr obj list title name defaultValue=10}}
+    <div>数字num:{{num}}</div>
+    <div>字符串str:{{str}}</div>
+    <div>布尔boo:{{if boo}}true{{else}}false{{/if}}</div>
+    <div>数组arr:[{{each arr}}{{$value}},{{/each}}]</div>
+    <div>对象obj的foo属性:{{obj.foo}}</div>
+    <div>引用外部动态数据list:{{each list}}{{$value}},{{/each}}</div>
+    <div>引用外部动态数据title:{{title}}</div>
+    <div>引用外部动态数据name:{{name}}</div>
+    <div>默认defaultValue:{{defaultValue}}</div>
+    <div>$rootData为同步数据包装对象，使用它可访问任意外部动态数据，例如访问title:{{$rootData.title}}</div>
+    {{/macro}}
+    <!-- 宏调用 -->
+    {{@macro:testMacro num=123 str="helloworld" boo=true arr=["a","b","c"] obj={foo:"foo",bar:"baz",} list="$list" title="$title" name="$user.name"}}
+	{{include "./macro-test"}}
+	{{@macro:macroTest num=123 str="helloworld" boo=true arr=["a","b","c"] obj={foo:"foo",bar:"baz",} list="$list" title="$title" name="$user.name"}}
+</div>
